@@ -1,0 +1,41 @@
+<%- include('../includes/head.ejs') %> 
+<body class="vh-100 d-flex flex-column">
+    <%- include('../includes/navbar.ejs') %> 
+    <main class="d-flex flex-column container flex-grow-1">
+        <h1>NLC STORE</h1>
+        <% if(products.length > 0) {%> 
+        <div class="container">
+            <div class="row gy-5 gx-5">
+                <% for (let product of products) { %> 
+                <div class="col-xl-3 col-md-4 col-sm-6 col-xs-12">
+                    <article class="card shadow" style="width: 250px; height: 400px">
+                        <div class="card-header d-flex align-items-center" style="min-height: 60px;">
+                            <%= product.title %> 
+                        </div>
+                        <img src="<%= product.imageUrl %> " alt="<%= product.title %>" height="200px" width="max-width">
+                        <div class="card-body">
+                            <h5 class="card-title"><%= product.price %></h5>
+                            <p class="card-text" style="max-width: 98%;-webkit-line-clamp: 2;-webkit-box-orient: vertical; max-height: 70px; display: -webkit-box; overflow: hidden;">
+                            <%= product.description %> 
+                            </p>
+                        </div>
+                        <div class="card-footer">
+                            <!-- <a href="" class="btn btn-primary">Add to cart</a> -->
+                            <form action="/shopping-cart" method="post">
+                                <input type="hidden" name="productId" value="<%=product._id%>">
+                                <button class="btn btn-primary " type="submit" style="width: 200px;">Add to cart</button>
+                            </form>
+                        </div>
+                    </article>
+                </div>
+                <% } %> 
+            </div>
+        </div>
+        <% }else{ %>
+            <h1>No Product found</h1>
+        <% } %>  
+    </main>
+    
+    <%- include('../includes/footer.ejs') %> 
+</body>
+</html>

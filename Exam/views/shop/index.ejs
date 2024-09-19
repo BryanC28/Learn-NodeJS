@@ -1,0 +1,178 @@
+<%- include('../includes/head.ejs') %>
+    <body id="intro"> 
+        <%- include('../includes/header.ejs') %>
+        <!-- Start -->
+        <section class="section">
+             <!-- Start Popular -->
+             <div class="container">
+                <div class="row">
+                   
+                </div><!--end row-->
+                <div class="row">
+                    <% for (let product of products) { %> 
+                    <div class="col-lg-3 col-md-6 col-12 mt-4 pt-2">
+                        <div class="card shop-list border-0 position-relative">
+                            <div class="shop-image position-relative overflow-hidden rounded shadow">
+                                <a href="#"><img src="<%= product.imageUrl %> " alt="<%= product.title %>" height="400px" width="300px"></a>
+                                <ul class="list-unstyled shop-icons">
+                                    <li><a href="#" class="btn btn-icon btn-pills btn-soft-danger"><i data-feather="heart" class="icons"></i></a></li>
+                                    <li class="mt-2"><a href="#" data-bs-toggle="modal" data-bs-target="#productview" class="btn btn-icon btn-pills btn-soft-primary"><i data-feather="eye" class="icons"></i></a></li>
+                                    <li class="mt-2">
+                                        <form action="/shopping-cart" method="post">
+                                            <input type="hidden" name="productId" value="<%=product._id%>">
+                                            <!-- <a href="/shopping-cart" class="btn btn-icon btn-pills btn-soft-warning"><i data-feather="shopping-cart" class="icons"></i></a> -->
+                                            <button class="btn btn-primary " type="submit" style="width: 150px;"><i data-feather="shopping-cart" class="icons"></i></button>
+                                        </form>
+                                    </li
+                                </ul>
+                            </div>
+                            <div class="card-body content pt-4 p-2">
+                                <a href="#" class="text-dark product-name h6"><%= product.title %></a>
+                                <div class="d-flex justify-content-between mt-1">
+                                    <h6 class="text-muted small fst-italic mb-0 mt-1">$<%= product.price %><del class="text-danger ms-2">$<%= product.price + 5.00 %></del> </h6>
+                                    <ul class="list-unstyled text-warning mb-0">
+                                        <li class="list-inline-item"><i class="fa-solid fa-star"></i></li>
+                                        <li class="list-inline-item"><i class="fa-solid fa-star"></i></li>
+                                        <li class="list-inline-item"><i class="fa-solid fa-star"></i></li>
+                                        <li class="list-inline-item"><i class="fa-solid fa-star"></i></li>
+                                        <li class="list-inline-item"><i class="fa-solid fa-star"></i></li>
+                                    </ul>
+                                </div>
+                                <div class="d-flex justify-content-between mt-1">
+                                    <p class="card-text" style="max-width: 98%;-webkit-line-clamp: 2;-webkit-box-orient: vertical; max-height: 70px; display: -webkit-box; overflow: hidden;">
+                                        <%= product.description %> 
+                                    </p>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div><!--end col-->
+                       <% } %> 
+                </div><!--end row-->
+             
+            </div><!--end container-->
+            <!-- End Popular -->
+               
+            <div class="container mt-60">
+                <div class="row justify-content-center">
+                    <div class="col-12">
+                        <div class="section-title text-center mb-4 pb-2 mt-5">
+                            <h4 class="title mb-4 text-bg-success">Other Books</h4>
+                            <!-- <p class="text-muted para-desc mx-auto mb-0">Start working with <span class="text-primary">Landrick</span> that can provide everything you need to generate awareness, drive traffic, connect.</p> -->
+                        </div>
+                    </div><!--end col-->
+                </div><!--end row-->
+            </div>
+
+            <div class="container-fluid mb-md-5">
+                <div class="row">
+                    <div class="col-md-12 mt-4 pt-2">
+                        <div class="tiny-six-item">
+                            <div class="tiny-slide">
+                                <div class="card border-0 work-container work-grid position-relative d-block overflow-hidden mx-2">
+                                    <div class="card-body p-0">
+                                        <a href="images/book/1.jpg" class="lightbox d-inline-block" title="">
+                                            <img src="images/book/1.jpg" class="img-fluid shadow rounded" alt="work-image">
+                                        </a>
+                                        <div class="content bg-white p-3">
+                                            <h5 class="mb-0"><a href="#" class="text-dark title">Iphone mockup</a></h5>
+                                            <h6 class="text-muted tag mb-0">$ 16</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="tiny-slide">
+                                <div class="card border-0 work-container work-grid position-relative d-block overflow-hidden mx-2">
+                                    <div class="card-body p-0">
+                                        <a href="images/book/2.jpg" class="lightbox d-inline-block" title="">
+                                            <img src="images/book/2.jpg" class="img-fluid shadow rounded" alt="work-image">
+                                        </a>
+                                        <div class="content bg-white p-3">
+                                            <h5 class="mb-0"><a href="#" class="text-dark title">Iphone mockup</a></h5>
+                                            <h6 class="text-muted tag mb-0">$ 16</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="tiny-slide">
+                                <div class="card border-0 work-container work-grid position-relative d-block overflow-hidden mx-2">
+                                    <div class="card-body p-0">
+                                        <a href="images/book/3.jpg" class="lightbox d-inline-block" title="">
+                                            <img src="images/book/3.jpg" class="img-fluid shadow rounded" alt="work-image">
+                                        </a>
+                                        <div class="content bg-white p-3">
+                                            <h5 class="mb-0"><a href="#" class="text-dark title">Iphone mockup</a></h5>
+                                            <h6 class="text-muted tag mb-0">$ 16</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                            <div class="tiny-slide">
+                                <div class="card border-0 work-container work-grid position-relative d-block overflow-hidden mx-2">
+                                    <div class="card-body p-0">
+                                        <a href="images/book/4.jpg" class="lightbox d-inline-block" title="">
+                                            <img src="images/book/4.jpg" class="img-fluid shadow rounded" alt="work-image">
+                                        </a>
+                                        <div class="content bg-white p-3">
+                                            <h5 class="mb-0"><a href="#" class="text-dark title">Iphone mockup</a></h5>
+                                            <h6 class="text-muted tag mb-0">$ 16</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                            <div class="tiny-slide">
+                                <div class="card border-0 work-container work-grid position-relative d-block overflow-hidden mx-2">
+                                    <div class="card-body p-0">
+                                        <a href="images/book/5.jpg" class="lightbox d-inline-block" title="">
+                                            <img src="images/book/5.jpg" class="img-fluid shadow rounded" alt="work-image">
+                                        </a>
+                                        <div class="content bg-white p-3">
+                                            <h5 class="mb-0"><a href="#" class="text-dark title">Iphone mockup</a></h5>
+                                            <h6 class="text-muted tag mb-0">$ 16</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="tiny-slide">
+                                <div class="card border-0 work-container work-grid position-relative d-block overflow-hidden mx-2">
+                                    <div class="card-body p-0">
+                                        <a href="images/book/6.jpg" class="lightbox d-inline-block" title="">
+                                            <img src="images/book/6.jpg" class="img-fluid shadow rounded" alt="work-image">
+                                        </a>
+                                        <div class="content bg-white p-3">
+                                            <h5 class="mb-0"><a href="#" class="text-dark title">Iphone mockup</a></h5>
+                                            <h6 class="text-muted tag mb-0">$ 16</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="tiny-slide">
+                                <div class="card border-0 work-container work-grid position-relative d-block overflow-hidden mx-2">
+                                    <div class="card-body p-0">
+                                        <a href="images/book/7.jpg" class="lightbox d-inline-block" title="">
+                                            <img src="images/book/7.jpg" class="img-fluid shadow rounded" alt="work-image">
+                                        </a>
+                                        <div class="content bg-white p-3">
+                                            <h5 class="mb-0"><a href="#" class="text-dark title">Iphone mockup</a></h5>
+                                            <h6 class="text-muted tag mb-0">$ 16</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!--end row-->
+            </div><!--end container-->
+        </section><!--end section-->
+        <!-- End -->
+        <%- include('../includes/footer.ejs') %>
+        <%- include('../includes/foot.ejs') %>
+    </body>
+<!-- Mirrored from shreethemes.in/landrick/layouts/index-ebook.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 04 Jun 2021 14:06:27 GMT -->
+</html>
